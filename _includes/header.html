@@ -1,0 +1,8 @@
+<header class="header">
+  <img class="logo" src="https://gcore.jsdelivr.net/gh/chem-cat/image-repo@main//logo.jpg" alt="logo"/>
+  <nav class="menu">
+    {% for menu in site.menu -%}
+    <a href="{{ site.baseurl }}{{ menu.url }}" class="hover-underline">{{ menu.title }}</a>
+    {% endfor -%}
+  </nav>
+</header>
