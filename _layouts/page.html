@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+{% include head.html -%}
+<body ondragstart="return false;">
+{% include header.html -%}
+{{ content }}
+{% include footer.html -%}
+{% include script.html -%}
+
+<script src="/static/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/static/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":250,"height":500,"hOffset": 40,"vOffset": -100},"mobile":{"show":true,"scale": 0.8,"motion": true},"log":false});</script>
+<script>
+    var OriginTitle = document.title;
+    var titleTime;
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            //$('[rel="icon"]').attr('href', "/funny.ico");
+            document.title = 'ヽ(●-`Д´-)ノ呜哇，崩溃了！';
+            clearTimeout(titleTime);
+        }
+        else {
+            //$('[rel="icon"]').attr('href', "/favicon.ico");
+            document.title = '(Ő∀Ő3)ノ哇喔！又好了！' + OriginTitle;
+            titleTime = setTimeout(function () {
+                document.title = OriginTitle;
+            }, 4000);
+        }
+    });</script>
+<script type="text/javascript"
+color="220,220,220" opacity='0.7' zIndex="-2" count="150" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+</body>
+</html>
